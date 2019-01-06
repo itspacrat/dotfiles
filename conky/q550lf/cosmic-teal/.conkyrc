@@ -17,20 +17,20 @@ conky.config = {
 	border_outer_margin = 10,
 	xinerama_head = 0,
 	alignment = 'middle',
-	gap_x = 4,
-	gap_y = 4,
+	gap_x = 0,
+	gap_y = 0,
 	draw_shades = false,
 	draw_outline = false,
 	draw_borders = false,
 	draw_graph_borders = false,
 	use_xft = true,
 	font = 'Ubuntu Mono:size=12',
-	xftalpha = 0.8,
+	xftalpha = 0.5,
 	uppercase = false,
 	default_color = 'white',
 	own_window_colour = '#000000',
 	minimum_width = 300, minimum_height = 0,
-	alignment = 'middle_right',
+	alignment = 'top_right',
 };
 conky.text = [[
 ${alignr}${font sans-serif:regular:size=11}${time %A, %B %d, %Y}
@@ -42,9 +42,9 @@ ${alignc}${font sans-serif:regular:size=8}${fs_used_perc /media/hdd}% used (${fs
 ${font sans-serif:regular:size=8}${color dark cyan}HDD:  ${fs_bar /media/hdd}${color white}
 ${alignr}${font sans-serif:normal:size=10}${color white}${time %m/%d/%Y}${color white}${font sans-serif:regular:size=8}
 ${execi 100 grep model /proc/cpuinfo | cut -d : -f2 | tail -1 | sed 's/\s//'}: ${font sans-serif:bold:size=8}${color dark cyan}${cpu cpu1}%
-${color dark cyan}${font sans:bold:size=9}${alignc}[CORES]${font sans-serif:italic:size=8}${goto 0}
-core 1 ${cpugraph cpu0}
-core 2 ${cpugraph cpu1}
-core 3 ${cpugraph cpu2}
-core 4 ${cpugraph cpu3}${color white}
+${color dark cyan}${font sans:bold:size=9}${alignc}[       C O R E S       ]${font sans-serif:italic:size=8}${goto 0}
+${cpugraph cpu0}
+${cpugraph cpu1}
+${cpugraph cpu2}
+${cpugraph cpu3}${color white}
 ]];
