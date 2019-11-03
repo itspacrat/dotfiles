@@ -1,0 +1,50 @@
+conky.config = {
+	update_interval = 0.6,
+	cpu_avg_samples = 4,
+	net_avg_samples = 2,
+	out_to_console = false,
+	override_utf8_locale = true,
+	double_buffer = true,
+	no_buffers = true,
+	text_buffer_size = 32768,
+	imlib_cache_size = 0,
+	own_window = true,
+	own_window_type = 'normal',
+	own_window_argb_visual = true,
+	own_window_argb_value = 0,
+	own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
+	border_inner_margin = 10,
+	border_outer_margin = 10,
+	xinerama_head = 0,
+	alignment = 'bottom_right',
+	gap_x = 2,
+	gap_y = 2,
+	draw_shades = false,
+	draw_outline = false,
+	draw_borders = false,
+	draw_graph_borders = false,
+	use_xft = true,
+	font = 'Ubuntu Mono:size=12',
+	xftalpha = 0.5,
+	uppercase = false,
+	default_color = 'white',
+	own_window_colour = '#000000',
+	minimum_width = 500, minimum_height = 0,
+	alignment = 'bottom_right',
+};
+conky.text = [[
+${goto 0}Random / Haunting quote _______________________________________
+
+${goto 0}${color light cyan}[ ${color orange}${execi 1000 python3 /media/hdd/git-clone/gulaptkmun/script.py > /media/hdd/git-clone/gulaptkmun/randomline.txt && sed -n 1p /media/hdd/git-clone/gulaptkmun/randomline.txt}${color light cyan} ]${color white}
+
+${font sans-serif:regular:size=8}${goto 0}${execi 100 grep model /proc/cpuinfo | cut -d : -f2 | tail -1 | sed 's/\s//'}: ${font sans-serif:bold:size=8}${color dark cyan}
+${goto 0}${cpu cpu0}%${cpugraph cpu0}${color white}
+${alignr}${font sans-serif:regular:size=11}${time %A, %B %d, %Y}
+${alignr}${color light cyan}${font sans-serif:italic:size=10}${time %I:%M}${font sans-serif:bold:size=6}${time %S}
+
+${alignc}${color white}${font sans-serif:regular:size=8}${fs_used_perc /}% used (${fs_used /} / ${fs_size /} - ${fs_free /} free)
+${font sans-serif:regular:size=8}${color dark cyan}System:  ${fs_bar /}${color white}
+${alignc}${font sans-serif:regular:size=8}${fs_used_perc /media/hdd}% used (${fs_used /media/hdd} / ${fs_size /media/hdd} - ${fs_free /media/hdd} free)
+${font sans-serif:regular:size=8}${color orange}HDD: ${color FD9A1E}${fs_bar /media/hdd}${color white}
+${alignr}${font sans-serif:normal:size=10}${color white}${time %m/%d/%Y}${color white}${font sans-serif:regular:size=8}
+]];
