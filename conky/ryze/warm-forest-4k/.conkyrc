@@ -1,0 +1,46 @@
+conky.config = {
+	update_interval = 1,
+	cpu_avg_samples = 4,
+	net_avg_samples = 2,
+	out_to_console = false,
+	override_utf8_locale = true,
+	double_buffer = true,
+	no_buffers = true,
+	text_buffer_size = 32768,
+	imlib_cache_size = 0,
+	own_window = true,
+	own_window_type = 'normal',
+	own_window_argb_visual = true,
+	own_window_argb_value = 0,
+	own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
+	border_inner_margin = 0,
+	border_outer_margin = 0,
+	xinerama_head = 1,
+	gap_x = 4,
+	gap_y = 0,
+	draw_shades = false,
+	draw_outline = false,
+	draw_borders = false,
+	draw_graph_borders = true,
+	use_xft = true,
+	xftalpha = 0.5,
+	font = 'Ubuntu Mono:size=12',
+	uppercase = false,
+	default_color = 'white',
+	own_window_colour = '#000000',
+	minimum_width = 240, minimum_height = 0,
+	alignment = 'middle_left',
+};
+conky.text = [[
+${color dark cyan}
+${goto 0}${alignr}${cpugraph cpu1 40,62 010f23 00c3ff -t}${cpugraph cpu2 40,62 010f23 00c3ff -t}${cpugraph cpu3 40,62 010f23 00c3ff -t}${cpugraph cpu4 40,62 010f23 00c3ff -t}
+${goto 0}${alignr}${cpugraph cpu5 40,62 010f23 00c3ff -t}${cpugraph cpu6 40,62 010f23 00c3ff -t}${cpugraph cpu7 40,62 010f23 00c3ff -t}${cpugraph cpu8 40,62 010f23 00c3ff -t}
+${goto 0}${alignr}${cpugraph cpu9 40,62 010f23 00c3ff -t}${cpugraph cpu10 40,62 010f23 00c3ff -t}${cpugraph cpu11 40,62 010f23 00c3ff -t}${cpugraph cpu12 40,62 010f23 00c3ff -t}
+${goto 0}${alignr}${cpugraph cpu13 40,62 010f23 00c3ff -t}${cpugraph cpu14 40,62 010f23 00c3ff -t}${cpugraph cpu15 40,62 010f23 00c3ff -t}${cpugraph cpu16 40,62 010f23 00c3ff -t}
+${color dark orange}${cpugraph cpu0 30,248 ffa500 00c3ff -t}
+${execigraph 1 "sensors -u | grep -A 0 'temp1_input' | cut -c 15-19" 00c3ff ffa500 -t}
+${alignc}${color white}${font sans-serif:regular:size=8}${fs_used_perc /}% used (${fs_free /} free)
+${font sans-serif:bold:size=8}${color cyan}System:  ${color dark cyan}${fs_bar /}${color white}
+${alignc}${font sans-serif:regular:size=8}${fs_used_perc /hdd4t}% used (${fs_free /hdd4t} free)
+${font sans-serif:bold:size=8}${color orange}HDD: ${color FD9A1E}${fs_bar /hdd4t}${color white}
+]];
