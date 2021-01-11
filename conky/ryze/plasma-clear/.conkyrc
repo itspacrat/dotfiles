@@ -1,0 +1,45 @@
+conky.config = {
+	update_interval = 0.5,
+	cpu_avg_samples = 2,
+	net_avg_samples = 2,
+	out_to_console = false,
+	override_utf8_locale = true,
+	double_buffer = true,
+	no_buffers = true,
+	text_buffer_size = 32768,
+	imlib_cache_size = 0,
+	own_window = true,
+	own_window_type = 'normal',
+	own_window_argb_visual = true,
+	own_window_argb_value = 0,
+	own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
+	border_inner_margin = 10,
+	border_outer_margin = 10,
+	xinerama_head = 0,
+	alignment = 'middle',
+	gap_x = 0,
+	gap_y = 0,
+	draw_shades = false,
+	draw_outline = false,
+	draw_borders = false,
+	draw_graph_borders = false,
+	use_xft = true,
+	font = 'Ubuntu Mono:size=12',
+	xftalpha = 0.5,
+	uppercase = false,
+	default_color = 'white',
+	own_window_colour = '#000000',
+	minimum_width = 300, minimum_height = 0,
+	alignment = 'middle_middle',
+};
+conky.text = [[
+${alignc}${color white}${font sans-serif:regular:size=8}${fs_used_perc /}% used (${fs_used /} / ${fs_size /} - ${fs_free /} free)
+${font sans-serif:regular:size=8}System:  ${color dark cyan}${fs_bar /}${color white}
+
+${alignc}${font sans-serif:regular:size=8}${fs_used_perc /hdd}% used (${fs_used /hdd} / ${fs_size /hdd} - ${fs_free /hdd} free)
+${font sans-serif:regular:size=8}HDD:  ${color dark cyan}${fs_bar /hdd}${color white}
+${alignc}${font sans-serif"regualr:size=8}${fs_used_perc /home}% used (${fs_used /home} / ${fs_size /home} used)
+${color white}${font sans-serif:regular:size=8}${execi 100 grep model /proc/cpuinfo | cut -d : -f2 | tail -1 | sed 's/\s//'}: ${font sans-serif:bold:size=8}${color white}${cpu cpu0}%${color dark cyan}
+${cpugraph cpu0}${color white}
+${color dark cyan}${font sans:bold:size=9}${alignc}${font sans-serif:italic:size=8}${goto 0}
+]];
