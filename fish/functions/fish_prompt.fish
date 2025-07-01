@@ -1,7 +1,3 @@
-if status is-interactive
-    # Commands to run in interactive sessions can go here
-end
-
 # Override the fish prompt with the date on one line, user@host on another, and git branch
 function fish_prompt
 
