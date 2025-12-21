@@ -1,2 +1,0 @@
-killall conky
-conky
