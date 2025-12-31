@@ -1,11 +1,24 @@
-# by default, ignore all files
+#
+# ===== ignore all parent dirs by default =====
 /*
+# not all configs need to go here
+/.config/*
+#* ignore non-config blender directories (extensions/)
+/.config/blender/*/*
 
-# allow scanning of items under /home/user
+#
+#  ===== allow scanning of items under important subdirs =====
 !/
+#* make sure gitignore isn't
+!/.gitignore
 
-# make sure gitignore isn't
-!.gitignore
+!/.config/
+
+
+
 
 ## Blender ignores
-!/.config/blender/*
+!/.config/blender/
+!/.config/blender/*/
+!/.config/blender/*/config/
+!/.config/blender/*/config/*
