@@ -1,8 +1,11 @@
-*
+# by default, ignore all files
+/*
 
+# allow scanning of items under /home
+!/
+
+# make sure gitignore isn't
 !.gitignore
-
-## VIM IGNORES
 
 ## Blender ignores
 !/.config/blender/*/config
