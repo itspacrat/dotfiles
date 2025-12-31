@@ -1,20 +1,24 @@
 #
 # ===== ignore all parent dirs by default =====
 /*
-# not all configs need to go here
+#* make sure gitignore isn't ignored
+!/.gitignore
+#* not all configs need to go here
 /.config/*
 #* ignore non-config blender directories (extensions/)
 /.config/blender/*/*
+#* ignore .local items by default
+/.local/*
+/.local/share/*
 
 #
 #  ===== allow scanning of items under important subdirs =====
 !/
-#* make sure gitignore isn't
-!/.gitignore
-
 !/.config/
+!/.local/
+!/.local/share/
 
-
+## krita ignores
 
 
 ## Blender ignores
