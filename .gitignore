@@ -3,13 +3,15 @@
 /*
 #* make sure gitignore isn't ignored
 !/.gitignore
-#* not all configs need to go here
-/.config/*
-#* ignore non-config blender directories (extensions/)
-/.config/blender/*/*
 #* ignore .local items by default
 /.local/*
 /.local/share/*
+#* not all configs need to go here
+/.config/*
+#* ignore non-config blender directories/items (extensions/)
+/.config/blender/*/*
+#* ignore unimportant krita directories/items
+/.local/share/krita/*
 
 #
 #  ===== allow scanning of items under important subdirs =====
@@ -18,11 +20,15 @@
 !/.local/
 !/.local/share/
 
-## krita ignores
+#
+#! ===== Important un-ignores =====
 
-
-## Blender ignores
+#* Blender
 !/.config/blender/
 !/.config/blender/*/
 !/.config/blender/*/config/
 !/.config/blender/*/config/*
+
+#* Krita
+!/.local/share/krita/
+!/.local/share/krita/color-schemes
