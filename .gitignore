@@ -1,11 +1,11 @@
 # by default, ignore all files
 /*
 
-# allow scanning of items under /home
+# allow scanning of items under /home/user
 !/
 
 # make sure gitignore isn't
 !.gitignore
 
 ## Blender ignores
-!/.config/blender/*/config
+!/.config/blender/*
