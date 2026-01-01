@@ -22,6 +22,7 @@
 
 #
 #! ===== Important un-ignores =====
+#
 
 #* Blender
 !/.config/blender/
@@ -31,4 +32,7 @@
 
 #* Krita
 !/.local/share/krita/
-!/.local/share/krita/color-schemes
+!/.local/share/krita/color-schemes/
+!/.local/share/krita/color-schemes/*
+!/.local/share/krita/workspaces/
+!/.local/share/krita/workspaces/*
