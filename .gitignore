@@ -24,6 +24,11 @@
 #! ===== Important un-ignores =====
 #
 
+#* Godot
+!/.config/godot/
+/.config/godot/*_dirs
+
+
 #* Blender
 !/.config/blender/
 !/.config/blender/*/
